@@ -1,19 +1,19 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './shared/pages/home/home.component';
+import { HomePageComponent } from './shared/pages/home-page/home-page.component';
 
 export const routes: Routes = [
   {
     path: '',
-    title: 'Home',
-    component: HomeComponent,
+    component: HomePageComponent,
   },
+
   {
     path: 'country',
-    loadChildren: () => import('./country/country.routes'),
+    loadChildren: () => import('./country/country.routes'), //.then(m => m.countryRoutes)
   },
+
   {
     path: '**',
-    pathMatch: 'full',
     redirectTo: '',
   },
 ];
